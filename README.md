@@ -13,11 +13,13 @@ Bu proje, İstanbul’un Beylikdüzü bölgesindeki emlak ilanlarını toplama, 
 3. [Eğitim ve Test Süreci](#eğitim-ve-test-süreci)
    - [Özellik Seçimi ve Modelleme](#özellik-seçimi-ve-modelleme)
    - [Veri Dönüştürme](#veri-dönüştürme)
-4. [Kullanım](#kullanım)
+4. [Modelleme](#modelleme)
+   - [Model Seçimi ve Eğitim](#model-seçimi-ve-eğitim)
+   - [Model Değerlendirme](#model-değerlendirme)
 
 ## Veri Toplama Adımı
 
-İstanbul’un Beylikdüzü bölgesindeki emlak ilanlarını toplamak için Selenium kütüphanesini kullanıldı.
+İstanbul’un Beylikdüzü bölgesindeki emlak ilanlarını toplamak için Selenium kütüphanesi kullanıldı.
 
 ## Veri Temizleme ve Dönüştürme
 
@@ -52,5 +54,24 @@ Bu proje, İstanbul’un Beylikdüzü bölgesindeki emlak ilanlarını toplama, 
 - **One-Hot Encoding:** Kategorik veriler sayısal verilere dönüştürülür. `pd.get_dummies` veya benzeri fonksiyonlar kullanılır.
 - **Ölçeklendirme:** `RobustScaler` gibi yöntemlerle veri ölçeklendirilir.
 
+## Modelleme
 
+### Model Seçimi ve Eğitim
+
+- **Model Seçimi:** Model seçiminde regresyon veya sınıflandırma problemleri için uygun algoritmalar seçilir. Örneğin, `LinearRegression`, `RandomForestRegressor`, veya `XGBoost` gibi modeller kullanılabilir.
+- **Model Eğitimi:** Seçilen model, eğitim verileri kullanılarak eğitilir. `fit` metodu kullanılarak modelin öğrenmesi sağlanır.
+
+### Model Değerlendirme
+
+- **Performans Metrikleri:** Modelin başarısı, ortalama karesel hata (MSE), R^2 skoru gibi metriklerle değerlendirilir.
+- **Özelliklerin Önem Düzeyleri:** Modelin hangi özellikleri daha önemli bulduğunu anlamak için görselleştirmeler yapılır. Örneğin, `feature_importances_` özelliği kullanılarak önem dereceleri görselleştirilir.
+
+## Kullanım
+
+1. **Gerekli Kütüphaneler:** Python kütüphanelerinin yüklü olduğundan emin olun: `selenium`, `pandas`, `scikit-learn`.
+2. **WebDriver Kurulumu:** Selenium için uygun WebDriver'ı indirin ve `Service` yolunu doğru şekilde ayarlayın.
+3. **Fonksiyon Kullanımı:** Emlak ilanlarını toplamak için uygun URL'yi girin.
+4. **Veri Analizi:** Elde edilen veri üzerinde temizleme, dönüştürme ve modelleme işlemlerini gerçekleştirin.
+
+---
 Projeye öneri veya katkıda bulunmak isterseniz, [Linkedin](https://www.linkedin.com/in/ibrahimsezginim) profilimi ziyaret edebilir veya [e-posta](mailto:benibrahimsezgin@outlook.com) ile bana ulaşabilirsiniz.
